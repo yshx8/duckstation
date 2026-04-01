@@ -29,7 +29,7 @@ jobs:
 
     - name: Cache Dependencies
       id: cache-deps
-      uses: actions/cache@v3.3.2
+      uses: actions/cache@v4
       with:
         path: |
           dep/msvc/deps-arm64
@@ -121,7 +121,7 @@ jobs:
 
     - name: Cache Dependencies
       id: cache-deps
-      uses: actions/cache@v3.3.2
+      uses: actions/cache@v4
       with:
         path: |
           dep/msvc/deps-arm64
@@ -235,7 +235,7 @@ jobs:
 
     - name: Cache Dependencies
       id: cache-deps
-      uses: actions/cache@v3.3.2
+      uses: actions/cache@v4
       with:
         path: ~/deps
         key: deps ${{ hashFiles('scripts/build-dependencies-linux.sh') }}
@@ -349,7 +349,7 @@ jobs:
 
     - name: Cache Dependencies
       id: cache-deps-mac
-      uses: actions/cache@v3.3.2
+      uses: actions/cache@v4
       with:
         path: ~/deps
         key: deps-mac ${{ hashFiles('scripts/build-dependencies-mac.sh') }}
