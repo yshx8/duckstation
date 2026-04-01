@@ -285,7 +285,7 @@ jobs:
       options: --privileged
     timeout-minutes: 120
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
         set-safe-directory: ${{ env.GITHUB_WORKSPACE }}
@@ -402,26 +402,31 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: "windows"
-
+          path: "windows"
+      
       - name: Download Windows ARM64 Artifact
         uses: actions/download-artifact@v4
         with:
           name: "windows-arm64"
-
+          path: "windows-arm64"
+      
       - name: Download Qt AppImage Artifact
         uses: actions/download-artifact@v4
         with:
           name: "linux-x64-appimage-qt"
-
+          path: "linux-x64-appimage-qt"
+      
       - name: Download Flatpak Artifact
         uses: actions/download-artifact@v4
         with:
           name: "linux-flatpak"
-
+          path: "linux-flatpak"
+      
       - name: Download MacOS Artifact
         uses: actions/download-artifact@v4
         with:
           name: "macos"
+          path: "macos"
 
       - name: Create preview release
         if: github.ref == 'refs/heads/master'
